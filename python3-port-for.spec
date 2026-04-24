@@ -6,7 +6,7 @@ Summary:	Utility that helps with local TCP ports management
 Summary(pl.UTF-8):	Narzędzie pomagające zarządzać lokalnymi portami TCP
 Name:		python3-port-for
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/port-for/
@@ -43,6 +43,7 @@ znaleźć nieużywany port lokalny TCP i zapamiętać skojarzenie.
 %py3_build_pyproject
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest tests
 %endif
 
